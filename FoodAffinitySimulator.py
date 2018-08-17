@@ -1,16 +1,21 @@
 from enum import Enum
 
 
+class Recipe(Enum):
+
+    pass
+
+
 class Rarity(Enum):
-    ANY = -2
     NONE = -1
     COMMON = 0
     RARE = 1
     SUPREME = 2
     FANTASTIC = 3
+    pass
 
 
-class ItemTemplateType (Enum):
+class ItemTemplateType(Enum):
     none = -1
     hollow = 1
     weapon_slash = 2
@@ -267,6 +272,7 @@ class ItemTemplateType (Enum):
     any_nut_food_group = 1197
     any_fruit_food_group = 1163
     any_spice_food_group = 1159
+    pass
 
 
 class ItemTemplate(Enum):
@@ -566,11 +572,267 @@ class ItemTemplate(Enum):
     RUM = dict({'name': 'rum', 'ItemTemplateId': 1286})
     MUFFIN = dict({'name': 'muffin', 'ItemTemplateId': 1287})
     COOKIE = dict({'name': 'cookie', 'ItemTemplateId': 1288})
+    pass
 
-    def __init__(self):
-        self.templateId = 0
-        self.name = ""
-        self.time = 0
+
+class Creature(Enum):
+    NONE = dict({"creatureId": 0, "name": "None", "description": "None"})
+    HUMAN = dict({"creatureId": 1, "name": "Human", "description": "Another explorer."})
+    SALESMAN = dict(
+        {"creatureId": 9, "name": "Salesman", "description": "An envoy from the king, buying and selling items."})
+    BROWN_COW = dict({"creatureId": 3, "name": "Brown cow", "description": "A brown docile cow."})
+    GUARDTOUGH = dict(
+        {"creatureId": 7, "name": "guardTough", "description": "This warrior would pose problems for any intruder."})
+    GUARDBRUTAL = dict(
+        {"creatureId": 8, "name": "guardBrutal", "description": "Not many people would like to cross this warrior."})
+    BLACK_WOLF = dict({"creatureId": 10, "name": "Black wolf",
+                       "description": "This dark shadow of the forests glares hungrily at you."})
+    TROLL = dict({"creatureId": 11, "name": "Troll",
+                  "description": "A dark green stinking troll. Always hungry. Always deadly."})
+    BROWN_BEAR = dict({"creatureId": 12, "name": "Brown bear",
+                       "description": "The brown bear has a distinctive hump on the shoulders, and long deadly claws "
+                                      "on the front paws."})
+    black_bear = dict({"creatureId": 42, "name": "Black bear",
+                       "description": "The black bear looks pretty kind, but has strong, highly curved claws ready to "
+                                      "render you to pieces."})
+    LARGE_RAT = dict({"creatureId": 13, "name": "Large rat",
+                      "description": "This is an unnaturally large version of a standard black rat."})
+    CAVE_BUG = dict({"creatureId": 43, "name": "Cave bug",
+                     "description": "Some kind of unnaturally large and deformed insect lunges at you from the dark. "
+                                    "It has a grey carapace, with small patches of lichen growing here and there."})
+    MOUNTAIN_LION = dict({"creatureId": 14, "name": "Mountain lion",
+                          "description": "Looking like a huge cat, it is tawny-coloured, with a small head and small, "
+                                         "rounded, black-tipped ears."})
+    WILD_CAT = dict({"creatureId": 15, "name": "Wild cat", "description": "A small wild cat, fierce and aggressive."})
+    JOE_THE_STUPE = dict({"creatureId": 2, "name": "Joe the Stupe",
+                          "description": "A hollow-eyed person is standing here, potentially dangerous but stupid as "
+                                         "ever."})
+    RED_DRAGON = dict({"creatureId": 16, "name": "Red dragon",
+                       "description": "The menacing huge dragon, with scales in every possible red color."})
+    GREEN_DRAGON_HATCHLING = dict({"creatureId": 17, "name": "Green dragon hatchling",
+                                   "description": "The green dragon hatchling is not as large as a full-grown dragon "
+                                                  "and unable to fly."})
+    BLACK_DRAGON_HATCHLING = dict({"creatureId": 18, "name": "Black dragon hatchling",
+                                   "description": "The black dragon hatchling is not as large as a full-grown dragon "
+                                                  "and unable to fly."})
+    WHITE_DRAGON_HATCHLING = dict({"creatureId": 19, "name": "White dragon hatchling",
+                                   "description": "The white dragon hatchling is not as large as a full-grown dragon "
+                                                  "and unable to fly."})
+    FOREST_GIANT = dict({"creatureId": 20, "name": "Forest giant",
+                         "description": "With an almost sad look upon its face, this filthy giant might be mistaken "
+                                        "for a harmless huge baby."})
+    UNICORN = dict(
+        {"creatureId": 21, "name": "Unicorn", "description": "A bright white unicorn with a slender twisted horn."})
+    KYKLOPS = dict({"creatureId": 22, "name": "Kyklops",
+                    "description": "This large drooling one-eyed giant is obviously too stupid to feel any mercy."})
+    GOBLIN = dict({"creatureId": 23, "name": "Goblin",
+                   "description": "This small, dirty creature looks at you greedily, and would go into a frenzy if "
+                                  "you show pain."})
+    HUGE_SPIDER = dict({"creatureId": 25, "name": "Huge spider",
+                        "description": "Monstrously huge and fast, these spiders love to be played with."})
+    LAVA_SPIDER = dict({"creatureId": 56, "name": "Lava spider",
+                        "description": "Lava spiders usually lurk in their lava pools, catching curious prey."})
+    GOBLIN_LEADER = dict({"creatureId": 26, "name": "Goblin leader",
+                          "description": "Always on the brink of cackling wildly, this creature is possibly insane."})
+    TROLL_KING = dict({"creatureId": 27, "name": "Troll king",
+                       "description": "This troll has a scary clever look in his eyes. He surely knows what he is "
+                                      "doing."})
+    SPIRIT_GUARD = dict({"creatureId": 28, "name": "Spirit guard",
+                         "description": "This fierce spirit vaguely resembles a human warrior, and for some reason "
+                                        "guards here."})
+    SPIRIT_SENTRY = dict({"creatureId": 29, "name": "Spirit sentry",
+                          "description": "This spirit vaguely resembles a human being, and for some reason guards here."
+                          })
+    SPIRIT_AVENGER = dict({"creatureId": 30, "name": "Spirit avenger",
+                           "description": "This restless spirit vaguely resembles a human being, that for some reason "
+                                          "has chosen to guard this place."})
+    SPIRIT_BRUTE = dict({"creatureId": 31, "name": "Spirit brute",
+                         "description": "This fierce spirit seems restless and upset but for some reason has chosen "
+                                        "to guard this place."})
+    SPIRIT_TEMPLAR = dict({"creatureId": 32, "name": "Spirit templar",
+                           "description": "The spirit of a proud knight has decided to protect this place."})
+    SPIRIT_SHADOW = dict({"creatureId": 33, "name": "Spirit shadow",
+                          "description": "A dark humanoid shadow looms about, its intentions unclear."})
+    JENN_KELLON_TOWER_GUARD = dict({"creatureId": 34, "name": "Jenn - Kellon tower guard",
+                                    "description": "This person seems to be able to put up some resistance. These "
+                                                   "guards will help defend you if you say help."})
+    HORDE_OF_THE_SUMMONED_TOWER_GUARD = dict({"creatureId": 35, "name": "Horde of the Summoned tower guard",
+                                              "description": "This person seems to be able to put up some resistance. "
+                                                             "These guards will help defend you if you say help."})
+    MOL_REHAN_TOWER_GUARD = dict({"creatureId": 36, "name": "Mol - Rehan tower guard",
+                                  "description": "This person seems to be able to put up some resistance. These "
+                                                 "guards will help defend you if you say help."})
+    ISLES_TOWER_GUARD = dict({"creatureId": 67, "name": "Isles tower guard",
+                              "description": "This person seems to be able to put up some resistance. These guards "
+                                             "will help defend you if you say help."})
+    BARTENDER = dict({"creatureId": 41, "name": "Bartender",
+                      "description": "A fat and jolly bartender, eager to help people settling in."})
+    SANTA_CLAUS = dict({"creatureId": 46, "name": "Santa Claus",
+                        "description": "Santa Claus is standing here, with a jolly face behind his huge white beard."})
+    EVIL_SANTA = dict({"creatureId": 47, "name": "Evil Santa",
+                       "description": "Some sort of Santa Claus is standing here, with a fat belly, yellow eyes, "
+                                      "and a bad breath."})
+    WILD_BOAR = dict(
+        {"creatureId": 37, "name": "Wild boar", "description": "A large and strong boar is grunting here."})
+    MOUNTAIN_GORILLA = dict({"creatureId": 39, "name": "Mountain gorilla",
+                             "description": "This normally calm mountain gorilla may suddenly become a very fierce "
+                                            "and dangerous foe if annoyed."})
+    ANACONDA = dict({"creatureId": 38, "name": "Anaconda",
+                     "description": "An over 3 meters long muscle, this grey-green snake is formidable."})
+    RABID_HYENA = dict({"creatureId": 40, "name": "Rabid hyena",
+                        "description": "Normally this doglike creature would act very cowardly, but some sickness "
+                                       "seems to have driven it mad and overly aggressive."})
+    PIG = dict({"creatureId": 44, "name": "Pig", "description": "A pig is here, wallowing in the mud."})
+    HEN = dict({"creatureId": 45, "name": "Hen", "description": "A fine hen proudly prods around here."})
+    ROOSTER = dict({"creatureId": 52, "name": "Rooster", "description": "A proud rooster struts around here."})
+    CHICKEN = dict({"creatureId": 48, "name": "Chicken", "description": "A cute chicken struts around here."})
+    DOG = dict({"creatureId": 51, "name": "Dog",
+                "description": "Occasionally this dog will bark and scratch itself behind the ears."})
+    CALF = dict({"creatureId": 50, "name": "Calf", "description": "This calf looks happy and free."})
+    BULL = dict({"creatureId": 49, "name": "Bull", "description": "This bull looks pretty menacing."})
+    BISON = dict(
+        {"creatureId": 82, "name": "Bison", "description": "The bison are impressive creatures when moving in hordes."})
+    HORSE = dict({"creatureId": 64, "name": "Horse", "description": "Horses like this one have many uses."})
+    FOAL = dict({"creatureId": 65, "name": "Foal", "description": "A foal skips around here merrily."})
+    EASTER_BUNNY = dict({"creatureId": 53, "name": "Easter bunny",
+                         "description": "Wow, the mystical easter bunny skips around here joyfully!"})
+    DEER = dict({"creatureId": 54, "name": "Deer", "description": "A fallow deer is here, watching for enemies."})
+    PHEASANT = dict(
+        {"creatureId": 55, "name": "Pheasant", "description": "The pheasant slowly paces here, vigilant as always."})
+    LAVA_FIEND = dict({"creatureId": 57, "name": "Lava fiend",
+                       "description": "These lava creatures enter the surface through lava pools, probably in order "
+                                      "to hunt. Or burn."})
+    CROCODILE = dict({"creatureId": 58, "name": "Crocodile",
+                      "description": "This meat-eating reptile swims very well but may also perform quick rushes on "
+                                     "land in order to catch you."})
+    SCORPION = dict({"creatureId": 59, "name": "Scorpion",
+                     "description": "The monstruously large type of scorpion found in woods and caves here is fairly "
+                                    "aggressive."})
+    TORMENTOR = dict({"creatureId": 60, "name": "Tormentor",
+                      "description": "A particularly grim person stands here, trying to sort things out."})
+    GUIDE = dict({"creatureId": 61, "name": "Guide",
+                  "description": "A rather stressed out person is here giving instructions on how to survive to "
+                                 "everyone who just arrived."})
+    LADY_OF_THE_LAKE = dict({"creatureId": 62, "name": "Lady of the lake",
+                             "description": "The hazy shape of a female spirit lingers below the waves."})
+    COBRA_KING = dict({"creatureId": 63, "name": "Cobra King",
+                       "description": "A huge menacing king cobra is guarding here, head swaying back and forth."})
+    CHILD = dict({"creatureId": 66, "name": "Child", "description": "A small child is here, exploring the world."})
+    AVENGER_OF_THE_LIGHT = dict({"creatureId": 68, "name": "Avenger of the Light",
+                                 "description": "Some kind of giant lumbers here, hunting humans."})
+    ZOMBIE = dict({"creatureId": 69, "name": "Zombie",
+                   "description": "A very bleak humanlike creature stands here, looking abscent-minded."})
+    SEA_SERPENT = dict({"creatureId": 70, "name": "Sea Serpent",
+                        "description": "Sea Serpents are said to sleep in the dark caves of the abyss for years, "
+                                       "then head to the surface to hunt once they get hungry."})
+    HUGE_SHARK = dict({"creatureId": 71, "name": "Huge shark",
+                       "description": "These huge sharks were apparently not just a rumour. How horrendous!"})
+    SOL_DEMON = dict({"creatureId": 72, "name": "Sol Demon", "description": "This demon has been released from Sol."})
+    DEATHCRAWLER_MINION = dict({"creatureId": 73, "name": "Deathcrawler minion",
+                                "description": "The Deathcrawler minions usually spawn in large numbers. They have "
+                                               "deadly poisonous bites."})
+    SPAWN_OF_UTTACHA = dict({"creatureId": 74, "name": "Spawn of Uttacha",
+                             "description": "Uttacha is a vengeful demigod who lives in the depths of an ocean on "
+                                            "Valrei. These huge larvae are hungry and confused abominations here."})
+    SON_OF_NOGUMP = dict({"creatureId": 75, "name": "Son of Nogump",
+                          "description": "Nogump the dirty has given birth to this foul two-headed giant wielding a "
+                                         "huge twohanded sword."})
+    DRAKESPIRIT = dict({"creatureId": 76, "name": "Drakespirit",
+                        "description": "Drakespirits are usually found in their gardens on Valrei. They are hungry "
+                                       "and aggressive."})
+    EAGLESPIRIT = dict({"creatureId": 77, "name": "Eaglespirit",
+                        "description": "The Eaglespirits live on a glacier on Valrei. They will attack if hungry or "
+                                       "threatened."})
+    EPIPHANY_OF_VYNORA = dict({"creatureId": 78, "name": "Epiphany of Vynora",
+                               "description": "This female creature is almost see-through, and you wonder if she is "
+                                              "made of water or thoughts alone."})
+    JUGGERNAUT_OF_MAGRANON = dict({"creatureId": 79, "name": "Juggernaut of Magranon",
+                                   "description": "A ferocious beast indeed, the juggernaut can crush mountains with "
+                                                  "its horned forehead."})
+    MANIFESTATION_OF_FO = dict({"creatureId": 80, "name": "Manifestation of Fo",
+                                "description": "Something seems to have gone wrong as Fo tried to create his "
+                                               "manifestation. The thorns are not loving at all and it seems very "
+                                               "aggressive."})
+    INCARNATION_OF_LIBILA = dict({"creatureId": 81, "name": "Incarnation of Libila",
+                                  "description": "This terrifying female apparition has something disturbing over it. "
+                                                 "As if it's just one facet of Libila."})
+    HELL_HORSE = dict({"creatureId": 83, "name": "Hell Horse",
+                       "description": "This fiery creature is rumoured to be the mounts of the demons of Sol."})
+    HELL_HOUND = dict({"creatureId": 84, "name": "Hell Hound",
+                       "description": "The hell hound is said to be spies and assassins for the demons of Sol."})
+    HELL_SCORPIOUS = dict(
+        {"creatureId": 85, "name": "Hell Scorpious", "description": "The pets of the demons of Sol are very playful."})
+    WORG = dict({"creatureId": 86, "name": "Worg",
+                 "description": "This wolf-like creature is unnaturally big and clumsy. The Worg seems finicky and "
+                                "nervous, which makes it unpredictable and dangerous to deal with."})
+    SKELETON = dict(
+        {"creatureId": 87, "name": "Skeleton", "description": "This abomination has been animated by powerful magic."})
+    WRAITH = dict(
+        {"creatureId": 88, "name": "Wraith", "description": "The wraith is born of darkness and shuns the daylight."})
+    SEAL = dict({"creatureId": 93, "name": "Seal",
+                 "description": "These creatures love to bathe in the sun and go for a swim hunting fish."})
+    TORTOISE = dict({"creatureId": 94, "name": "Tortoise",
+                     "description": "The tortoise is pretty harmless but can pinch you quite bad with its bite."})
+    CRAB = dict({"creatureId": 95, "name": "Crab", "description": "Crabs are known to hide well and walk sideways."})
+    SHEEP = dict({"creatureId": 96, "name": "Sheep",
+                  "description": "A mythical beast of legends, it stares back at you with blood filled eyes and froth "
+                                 "around the mouth."})
+    BLUE_WHALE = dict({"creatureId": 97, "name": "Blue whale",
+                       "description": "These gigantic creatures travel huge distances looking for food, while singing "
+                                      "their mysterious songs."})
+    SEAL_CUB = dict(
+        {"creatureId": 98, "name": "Seal cub", "description": "A young seal, waiting to be fed luscious fish."})
+    DOLPHIN = dict({"creatureId": 99, "name": "Dolphin",
+                    "description": "A playful dolphin. They have been known to defend sailors in distress from their "
+                                   "natural enemy, the shark."})
+    OCTOPUS = dict({"creatureId": 100, "name": "Octopus",
+                    "description": "Larger specimen have been known to pull whole ships down into the abyss. Luckily "
+                                   "this one is small."})
+    LAMB = dict({"creatureId": 101, "name": "Lamb", "description": "A small cuddly ball of fluff."})
+    RAM = dict({"creatureId": 102, "name": "Ram",
+                "description": "A mythical beast of legends, it stares back at you with blood filled eyes and froth "
+                               "around the mouth."})
+    BLACK_DRAGON = dict({"creatureId": 89, "name": "Black dragon",
+                         "description": "The menacing huge dragon, with scales as dark as the night."})
+    BLUE_DRAGON = dict(
+        {"creatureId": 91, "name": "Blue dragon", "description": "The menacing huge dragon, with dark blue scales."})
+    GREEN_DRAGON = dict({"creatureId": 90, "name": "Green dragon",
+                         "description": "The menacing huge dragon, with emerald green scales."})
+    WHITE_DRAGON = dict(
+        {"creatureId": 92, "name": "White dragon", "description": "The menacing huge dragon, with snow white scales."})
+    BLUE_DRAGON_HATCHLING = dict({"creatureId": 104, "name": "Blue dragon hatchling",
+                                  "description": "The blue dragon hatchling is not as large as a full-grown dragon "
+                                                 "and unable to fly."})
+    RED_DRAGON_HATCHLING = dict({"creatureId": 103, "name": "Red dragon hatchling",
+                                 "description": "The red dragon hatchling is not as large as a full-grown dragon and "
+                                                "unable to fly."})
+    FOG_SPIDER = dict({"creatureId": 105, "name": "Fog Spider",
+                       "description": "Usually only encountered under foggy conditions, this creature is often "
+                                      "considered an Omen."})
+    RIFT_BEAST = dict({"creatureId": 106, "name": "Rift Beast",
+                       "description": "These vile creatures emerge from the rift in great numbers."})
+    RIFT_JACKAL = dict({"creatureId": 107, "name": "Rift Jackal",
+                        "description": "The Jackals accompany the Beasts as they spew out of the rift."})
+    RIFT_OGRE = dict({"creatureId": 108, "name": "Rift Ogre",
+                      "description": "The Rift Ogres seem to bully Beasts and Jackals into following orders."})
+    RIFT_WARMASTER = dict(
+        {"creatureId": 109, "name": "Rift Warmaster", "description": "These plan and lead attacks from the rift."})
+    RIFT_OGRE_MAGE = dict(
+        {"creatureId": 111, "name": "Rift Ogre Mage", "description": "Ogre Mages have mysterious powers."})
+    RIFT_CASTER = dict({"creatureId": 110, "name": "Rift Caster",
+                        "description": "Proficient spell casters, but they seem to avoid direct contact."})
+    RIFT_SUMMONER = dict({"creatureId": 112, "name": "Rift Summoner",
+                          "description": "Summoners seem to be able to call for aid from the Rift."})
+    NPC_HUMAN = dict({"creatureId": 113, "name": "NPC Human",
+                      "description": "A relatively normal person stands here waiting for something to happen."})
+    NPC_WAGONER = dict({"creatureId": 114, "name": "NPC Wagoner",
+                        "description": "A relatively normal person stands here waiting to help transport bulk goods."})
+    WAGON_CREATURE = dict({"creatureId": 115, "name": "Wagon Creature",
+                           "description": "The wagon creature is only used for hauling a wagoner's wagon."})
+    WEAPON_TEST_DUMMY = dict({"creatureId": 116, "name": "Weapon Test Dummy",
+                              "description": "An immortal that shouts out any damage that it receives, "
+                                             "then immediately heals."})
+    pass
 
 
 class Cooker(Enum):
@@ -578,62 +840,321 @@ class Cooker(Enum):
     OVEN = dict({'itemTemplate': ItemTemplate.OVEN})
     FORGE = dict({'itemTemplate': ItemTemplate.FORGE})
 
+    # if (recipe.hasCooker()) {
+    #    final Item cooker = target.getTopParentOrNull();
+    #    if (cooker != null) {
+    #        ibonus += cooker.getTemplateId();
+    #        if (!Server.getInstance().isPS()) {
+    #            ibonus += cooker.getRarity();
+    #        }
+    #    }
+    # }
+
     def __init__(self):
         self.itemTemplate = ItemTemplate.NONE
         self.difficulty = 0
-        self.rarity = Rarity.ANY
+        self.rarity = Rarity.NONE
+
     pass
 
 
 class Container(Enum):
+    NONE = dict({"itemTemplate": ItemTemplate.NONE, "name": "none"})
+    FRYING_PAN = dict({"itemTemplate": ItemTemplate.FRYING_PAN, "name": "frying pan"})
+    POTTERY_JAR = dict({"itemTemplate": ItemTemplate.POTTERY_JAR, "name": "pottery jar"})
+    POTTERY_BOWL = dict({"itemTemplate": ItemTemplate.POTTERY_BOWL, "name": "pottery bowl"})
+    CORPSE = dict({"itemTemplate": ItemTemplate.CORPSE, "name": "corpse"})
+    OPEN_HELM = dict({"itemTemplate": ItemTemplate.OPEN_HELM, "name": "open helm"})
+    SAUCE_PAN = dict({"itemTemplate": ItemTemplate.SAUCE_PAN, "name": "sauce pan"})
+    CAULDRON = dict({"itemTemplate": ItemTemplate.CAULDRON, "name": "cauldron"})
+    WINE_BARREL = dict({"itemTemplate": ItemTemplate.WINE_BARREL, "name": "wine barrel"})
+    PIE_DISH = dict({"itemTemplate": ItemTemplate.PIE_DISH, "name": "pie dish"})
+    CAKE_TIN = dict({"itemTemplate": ItemTemplate.CAKE_TIN, "name": "cake tin"})
+    BAKING_STONE = dict({"itemTemplate": ItemTemplate.BAKING_STONE, "name": "backing stone"})
+    ROASTING_DISH = dict({"itemTemplate": ItemTemplate.ROASTING_DISH, "name": "roasting dish"})
+    PLATE = dict({"itemTemplate": ItemTemplate.PLATE, "name": "plate"})
+    MUSHROOM = dict({"itemTemplate": ItemTemplate.MUSHROOM, "name": "mushroom"})
+    SAUSAGE_SKIN = dict({"itemTemplate": ItemTemplate.SAUSAGE_SKIN, "name": "sausage skin"})
+    BOILER = dict({"itemTemplate": ItemTemplate.BOILER, "name": "boiler"})
+
+    # ibonus += target.getTemplateId();
 
     def __init__(self):
         self.itemTemplate = ItemTemplate.NONE
         self.difficulty = 0
+
     pass
 
 
-class CState(Enum):
-    RAW =
+class CookedState(Enum):
+    NONE = dict({"cookedStateId": -1, "name": "none"})
+    RAW = dict({"cookedStateId": 0, "name": "raw"})
+    FRIED = dict({"cookedStateId": 1, "name": "fried"})
+    GRILLED = dict({"cookedStateId": 2, "name": "grilled"})
+    BOILED = dict({"cookedStateId": 3, "name": "boiled"})
+    ROASTED = dict({"cookedStateId": 4, "name": "roasted"})
+    STEAMED = dict({"cookedStateId": 5, "name": "steamed"})
+    BAKED = dict({"cookedStateId": 6, "name": "baked"})
+    COOKED = dict({"cookedStateId": 7, "name": "cooked"})
+    CANDIED = dict({"cookedStateId": 8, "name": "candied"})
+    CHOCOLATE_COATED = dict({"cookedStateId": 9, "name": "chocolate coated"})
 
+    # Recipes.convertCookingStateIntoByte(). Only one cooked state can exists for an item.
+    # The first 16 values of auxData (of which 0-9 are used below) is reserved for remember anyone of these states.
+    # see Item.setRightAuxData() and its uses.
+
+    pass
+
+
+class PreparedState(Enum):
+    NONE = 0B0
+    CHOPPED = 0B00010000
+    DICED = 0B00010000
+    GROUND = 0B00010000
+    UNFERMENTED = 0B00010000
+    ZOMBIEFIED = 0B00010000
+    WHIPPED = 0B00010000
+    MASHED = 0B00100000
+    MINCED = 0B00100000
+    FERMENTING = 0B00100000
+    CLOTTED = 0B00100000
+    WRAPPED = 0B01000000
+    UNDISTILLED = 0B01000000
+    SALTED = 0B10000000
+    FRESH = 0B10000000
+    # Multiple states can exists at once. A mask is used to toggle a bit position. some states use the same
+    # position and can't exists simultaneously.
+    # see Recipes.convertPhysicalStateIntoByte(). Different states are referenced with the "+".
+    # This is stored in the last 4 bytes of auxData.
+    pass
+
+
+class Material(Enum):
+    NONE = dict({"materialId": 0, "name": "none"})
+    FLESH = dict({"materialId": 1, "name": "flesh"})
+    MEAT = dict({"materialId": 2, "name": "meat"})
+    RYE = dict({"materialId": 3, "name": "rye"})
+    OAT = dict({"materialId": 4, "name": "oat"})
+    BARLEY = dict({"materialId": 5, "name": "barley"})
+    WHEAT = dict({"materialId": 6, "name": "wheat"})
+    GOLD = dict({"materialId": 7, "name": "gold"})
+    SILVER = dict({"materialId": 8, "name": "silver"})
+    STEEL = dict({"materialId": 9, "name": "steel"})
+    COPPER = dict({"materialId": 10, "name": "copper"})
+    IRON = dict({"materialId": 11, "name": "iron"})
+    LEAD = dict({"materialId": 12, "name": "lead"})
+    ZINC = dict({"materialId": 13, "name": "zinc"})
+    BIRCHWOOD = dict({"materialId": 14, "name": "birchwood"})
+    STONE = dict({"materialId": 15, "name": "stone"})
+    LEATHER = dict({"materialId": 16, "name": "leather"})
+    COTTON = dict({"materialId": 17, "name": "cotton"})
+    CLAY = dict({"materialId": 18, "name": "clay"})
+    POTTERY = dict({"materialId": 19, "name": "pottery"})
+    GLASS = dict({"materialId": 20, "name": "glass"})
+    MAGIC = dict({"materialId": 21, "name": "magic"})
+    VEGETARIAN = dict({"materialId": 22, "name": "vegetarian"})
+    FIRE = dict({"materialId": 23, "name": "fire"})
+    OIL = dict({"materialId": 25, "name": "oil"})
+    WATER = dict({"materialId": 26, "name": "water"})
+    CHARCOAL = dict({"materialId": 27, "name": "charcoal"})
+    DAIRY = dict({"materialId": 28, "name": "dairy"})
+    HONEY = dict({"materialId": 29, "name": "honey"})
+    BRASS = dict({"materialId": 30, "name": "brass"})
+    BRONZE = dict({"materialId": 31, "name": "bronze"})
+    FAT = dict({"materialId": 32, "name": "fat"})
+    PAPER = dict({"materialId": 33, "name": "paper"})
+    TIN = dict({"materialId": 34, "name": "tin"})
+    BONE = dict({"materialId": 35, "name": "bone"})
+    SALT = dict({"materialId": 36, "name": "salt"})
+    PINEWOOD = dict({"materialId": 37, "name": "pinewood"})
+    OAKENWOOD = dict({"materialId": 38, "name": "oakenwood"})
+    CEDARWOOD = dict({"materialId": 39, "name": "cedarwood"})
+    WILLOW = dict({"materialId": 40, "name": "willow"})
+    MAPLEWOOD = dict({"materialId": 41, "name": "maplewood"})
+    APPLEWOOD = dict({"materialId": 42, "name": "applewood"})
+    LEMONWOOD = dict({"materialId": 43, "name": "lemonwood"})
+    OLIVEWOOD = dict({"materialId": 44, "name": "olivewood"})
+    CHERRYWOOD = dict({"materialId": 45, "name": "cherrywood"})
+    LAVENDERWOOD = dict({"materialId": 46, "name": "lavenderwood"})
+    ROSEWOOD = dict({"materialId": 47, "name": "rosewood"})
+    THORN = dict({"materialId": 48, "name": "thorn"})
+    GRAPEWOOD = dict({"materialId": 49, "name": "grapewood"})
+    CAMELLIAWOOD = dict({"materialId": 50, "name": "camelliawood"})
+    OLEANDERWOOD = dict({"materialId": 51, "name": "oleanderwood"})
+    CRYSTAL = dict({"materialId": 52, "name": "crystal"})
+    WEMP = dict({"materialId": 53, "name": "wemp"})
+    DIAMOND = dict({"materialId": 54, "name": "diamond"})
+    ANIMAL = dict({"materialId": 55, "name": "animal"})
+    ADAMANTINE = dict({"materialId": 56, "name": "adamantine"})
+    GLIMMERSTEEL = dict({"materialId": 57, "name": "glimmersteel"})
+    TAR = dict({"materialId": 58, "name": "tar"})
+    PEAT = dict({"materialId": 59, "name": "peat"})
+    REED = dict({"materialId": 60, "name": "reed"})
+    SLATE = dict({"materialId": 61, "name": "slate"})
+    MARBLE = dict({"materialId": 62, "name": "marble"})
+    CHESTNUT = dict({"materialId": 63, "name": "chestnut"})
+    WALNUT = dict({"materialId": 64, "name": "walnut"})
+    FIRWOOD = dict({"materialId": 65, "name": "firwood"})
+    LINDENWOOD = dict({"materialId": 66, "name": "lindenwood"})
+    SERYLL = dict({"materialId": 67, "name": "seryll"})
+    IVY = dict({"materialId": 68, "name": "ivy"})
+    WOOL = dict({"materialId": 69, "name": "wool"})
+    STRAW = dict({"materialId": 70, "name": "straw"})
+    HAZELNUTWOOD = dict({"materialId": 71, "name": "hazelnutwood"})
+    BEAR = dict({"materialId": 72, "name": "bear"})
+    BEEF = dict({"materialId": 73, "name": "beef"})
+    CANINE = dict({"materialId": 74, "name": "canine"})
+    FELINE = dict({"materialId": 75, "name": "feline"})
+    DRAGON = dict({"materialId": 76, "name": "dragon"})
+    FOWL = dict({"materialId": 77, "name": "fowl"})
+    GAME = dict({"materialId": 78, "name": "game"})
+    HORSE = dict({"materialId": 79, "name": "horse"})
+    HUMAN = dict({"materialId": 80, "name": "human"})
+    HUMANOID = dict({"materialId": 81, "name": "humanoid"})
+    INSECT = dict({"materialId": 82, "name": "insect"})
+    LAMB = dict({"materialId": 83, "name": "lamb"})
+    PORK = dict({"materialId": 84, "name": "pork"})
+    SEAFOOD = dict({"materialId": 85, "name": "seafood"})
+    SNAKE = dict({"materialId": 86, "name": "snake"})
+    TOUGH = dict({"materialId": 87, "name": "tough"})
+    ORANGEWOOD = dict({"materialId": 88, "name": "orangewood"})
+    RASPBERRYWOOD = dict({"materialId": 90, "name": "raspberrywood"})
+    BLUEBERRYWOOD = dict({"materialId": 91, "name": "blueberrywood"})
+    LINGONBERRYWOOD = dict({"materialId": 92, "name": "lingonberrywood"})
+    pass
 
 
 class Active:
     def __init__(self):
-        self.itemTemplate = ItemTemplate.NONE
-        self.cstate = ""
-        self.pstate = ""
-        self.material = ""
-        self.realtemplate = ItemTemplate.NONE
-        self.difficulty = 0
-        self.loss = 0
-        self.ratio = 0
+        self.itemTemplate = ItemTemplate.NONE  # Json key: "id" in Wurm recipes
+        self.cookedState = CookedState.NONE  # Json key: "cstate" in Wurm recipes
+        self.preparedState = PreparedState.NONE  # Json key: "pstate" in wurm recipes
+        self.material = Material.NONE  # Json key: "material" in wurm recipes
+        self.realTemplate = ItemTemplate.NONE  # Json key: "realtemplate" in wurm recipes
+        self.difficulty = 0  # Json key: "difficulty" in wurm recipes
+        self.loss = 0  # Json key: "loss" in wurm recipes
+        self.ratio = 0  # Json key: "ratio" in wurm recipes
+        self.rarity = Rarity.NONE  # Not in recipes but needed for affinity simulation.
+
+    # if (source != null & & recipe.hasActiveItem() & & recipe.getActiveItem().getTemplateId() != ItemList.bodyHand) {
+    #     ibonus += source.getTemplateId();
+    #     if (!Server.getInstance().isPS()) {
+    #         ibonus += source.getRarity();
+    #     }
+    # }
     pass
 
 
 class Target:
+    def __init__(self):
+        self.itemTemplate = ItemTemplate.NONE  # Json key: "id" in Wurm recipes
+        self.cookedState = CookedState.NONE  # Json key: "cstate" in Wurm recipes
+        self.preparedState = PreparedState.NONE  # Json key: "pstate" in wurm recipes
+        self.material = Material.NONE  # Json key: "material" in wurm recipes
+        self.realTemplate = ItemTemplate.NONE  # Json key: "realtemplate" in wurm recipes
+        self.difficulty = 0  # Json key: "difficulty" in wurm recipes
+        self.loss = 0  # Json key: "loss" in wurm recipes
+        self.ratio = 0  # Json key: "ratio" in wurm recipes
+        self.creature = Creature.NONE  # Json key: "creature" in wurm recipes
+        self.rarity = Rarity.NONE
+
+    # else {
+    #     if (target.usesFoodState()) {
+    #         ibonus += target.getAuxData();
+    #     }
+    #     ibonus += target.getMaterial();
+    #     ibonus += target.getRealTemplateId();
+    #     if (this.getTemplateId() == 272) {
+    #         ibonus += target.getData1();
+    #     }
+    #     if (!Server.getInstance().isPS()) {
+    #         ibonus += target.getRarity();
+    #     }
+    # }
     pass
 
 
-class Mandatory:
+class Ingredient:
+    NONE = dict({"itemTemplate": ItemTemplate.NONE, "name": "none"})
+
+    def __init__(self):
+        self.itemTemplate = ItemTemplate.NONE  # Json key: "id" in Wurm recipes
+        self.cookedState = CookedState.NONE  # Json key: "cstate" in Wurm recipes
+        self.preparedState = PreparedState.NONE  # Json key: "pstate" in wurm recipes
+        self.material = Material.NONE  # Json key: "material" in wurm recipes
+        self.realTemplate = ItemTemplate.NONE  # Json key: "realtemplate" in wurm recipes
+        self.difficulty = 0  # Json key: "difficulty" in wurm recipes
+        self.loss = 0  # Json key: "loss" in wurm recipes
+        self.ratio = 0  # Json key: "ratio" in wurm recipes
+        self.rarity = Rarity.NONE  # Not in recipes but needed for affinity simulation.
+
+    # if (target.isFoodMaker()) {
+    #     for (final Item item4: target.getItemsAsArray()) {
+    #         ibonus += item4.getTemplateId();
+    #     if (item4.usesFoodState()) {
+    #         ibonus += item4.getAuxData();
+    #     }
+    #     ibonus += item4.getMaterial();
+    #     ibonus += item4.getRealTemplateId();
+    #     if (!Server.getInstance().isPS()) {
+    #         ibonus += item4.getRarity();
+    #     }
+    #   }
+    # }
     pass
 
 
-class Optional:
+class IngredientsGroup(Enum):
+    # C(n,k) Combination(no repeat) "n" number of items choose "k" number of items.
+    # ivc1, ivc2, ... ivcN  item variation count for each possible recipes ingredient.
+    # oic optional ingredient count
+    MANDATORY = dict({"name": "mandatory", "combinationFunction": "product(C(ivc1, 1), C(ivc2, 1), ... C(ivcN, 1))"})
+    # Since it's choose 1 we don't actually need C formula. Summing each item's possibilities would give the same
+    # result.
+    OPTIONAL = dict({"name": "optional", "combinationFunction": "product(C(ivc1 + 1, 1), C(ivc2 + 1, 1), ... C(ivcN + "
+                                                                "1, 1))"})
+    # For each recipe optional ingredient add one, a none ingredient, to represent the exclusion of it. Optional are
+    # one or none for each recipe ingredient.
+    ONE_OF = dict({"name": "oneof", "combinationFunction": "sum(C(ivc1, 1), C(ivc2, 1), ... C(ivcN, 1))"})
+    # Chose only one ingredient from this group.
+    ZERO_OR_ONE = dict({"name": "zeroorone", "combinationFunction": "sum(C(ivc1 + 1, 1), C(ivc2 + 1, 1), ... C(ivcN + "
+                                                                    "1, 1))"})
+    # For each recipe zeroorone ingredient add one, a none ingredient, to represent the exclusion of it. zeroorone are
+    # one or none for the entire group.
+    ONE_OR_MORE = dict({"name": "oneormore", "combinationFunction": "sum(sum(C(icv1, 1), C(icv1, 2) ... C(icv1, "
+                                                                    "icv1)), sum(C(icv2, 1), C(icv2, 2) ... C(icv2, "
+                                                                    "icv2)) ... sum(C(icvN, 1), C(icvN, "
+                                                                    "2) ... C(icvN, icvN)))"})
+    # At least one or more from the entire group.
+    ANY = dict({"name": "any", "combinationFunction": ""})
+    NONE = dict({"name": "none", "combinationFunction": ""})
+
+    # algorithm to make combinations of things.
+    # comb({ 1 2 3 4 5 }, 3) =
+    # { 1, comb({ 2 3 4 5 }, 2) } and
+    # { 2, comb({ 3 4 5 }, 2) } and
+    # { 3, comb({ 4 5 }, 2) }
+
+    def __init__(self):
+        self.groupType = IngredientsGroup.NONE
+        self.ingredients = tuple(Ingredient.NONE)
     pass
 
 
-class OneOf:
-    pass
+class Result:
 
+    def __init__(self):
+        self.itemTemplate = ItemTemplate.NONE           # Json key: "id" in Wurm recipes and is the item's name.
+        self.name = ""                                  # Json key: "name" custom name.
+        self.cookedState = CookedState.NONE             # Json key: "cstate" in Wurm recipes
+        self.preparedState = PreparedState.NONE         # Json key: "pstate" in wurm recipes
+        self.material = Material.NONE                   # Json key: "material" in wurm recipes
+        self.realTemplate = ItemTemplate.NONE           # Json key: "realtemplate" in wurm recipes
+        self.referenceRealTemplate = ItemTemplate.NONE  #
+        self.difficulty = 0                             # Json key: "difficulty" in wurm recipes
+        self.description = ""                           # Json key: "description"
+        self.achievement = ""
+        self.useTemplateWeight = ""
+        self.icon = ""
 
-class ZeroOrOne:
-    pass
-
-
-class OneOrMore:
-    pass
-
-
-class Any:
     pass
